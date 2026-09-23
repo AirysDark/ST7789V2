@@ -254,28 +254,34 @@ void Framebuffer::fillRect(
     uint16_t color
 )
 {
-    if(w <= 0 || h <= 0)
+    if(buffer == nullptr || w <= 0 || h <= 0) return;
+    if(x >= FB_WIDTH || y >= FB_HEIGHT) return;
+    if((x + w) <= 0 || (y + h) <= 0) return;
+
+    if(x < 0)
     {
-        return;
+        w += x;
+        x = 0;
     }
 
-    for(
-        int16_t iy = 0;
-        iy < h;
-        iy++
-    )
+    if(y < 0)
     {
-        for(
-            int16_t ix = 0;
-            ix < w;
-            ix++
-        )
+        h += y;
+        y = 0;
+    }
+
+    if((x + w) > FB_WIDTH)  w = FB_WIDTH - x;
+    if((y + h) > FB_HEIGHT) h = FB_HEIGHT - y;
+
+    if(w <= 0 || h <= 0) return;
+
+    // Clip once, then write contiguous rows without per-pixel bounds checks.
+    for(int16_t iy = 0; iy < h; ++iy)
+    {
+        uint16_t* dst = buffer + ((y + iy) * FB_WIDTH) + x;
+        for(int16_t ix = 0; ix < w; ++ix)
         {
-            drawPixel(
-                x + ix,
-                y + iy,
-                color
-            );
+            dst[ix] = color;
         }
     }
 }
@@ -326,7 +332,13 @@ void Framebuffer::pushRect(
     int16_t h
 )
 {
-    if(w <= 0 || h <= 0)
+    if(buffer == nullptr || w <= 0 || h <= 0)
+    {
+        return;
+    }
+
+    if(x >= FB_WIDTH || y >= FB_HEIGHT ||
+       (x + w) <= 0 || (y + h) <= 0)
     {
         return;
     }
