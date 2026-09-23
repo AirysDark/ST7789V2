@@ -663,8 +663,10 @@ void Renderer3D::drawSphere(
     uint16_t color
 )
 {
-    const int rings = 12;
-    const int sectors = 12;
+    // Respect the tessellation requested by the caller.
+    // Clamp to safe minimums so division and topology remain valid.
+    const int rings = max(2, (int)stacks);
+    const int sectors = max(3, (int)slices);
 
     for(int r = 0; r < rings; r++)
     {
