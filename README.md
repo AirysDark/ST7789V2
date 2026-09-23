@@ -2,6 +2,12 @@
 
 A framebuffer-based 2D/3D graphics engine for the **ESP32-S3-LCD-1.69 Touch Screen Version**.
 
+## Arduino core requirement
+
+**Target and compatibility baseline: Arduino-ESP32 Core 2.0.17.**
+
+Development, testing and optimization of this repository must preserve compatibility with **Espressif Arduino-ESP32 2.0.17**. Do not assume APIs, SPI behavior, memory APIs, build flags or features introduced only in Arduino-ESP32 3.x.
+
 ## Target hardware
 
 - MCU: ESP32-S3R8, dual-core Xtensa LX7 up to 240 MHz
