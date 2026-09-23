@@ -1,0 +1,20 @@
+{
+  "name": "ESP32-S3-Watch-Engine",
+  "version": "1.0.0",
+  "description": "Graphics and 3D engine for ESP32-S3-LCD-1.69",
+  "keywords": [
+    "esp32",
+    "esp32s3",
+    "watch",
+    "graphics",
+    "st7789",
+    "cst816",
+    "3d"
+  ],
+  "frameworks": [
+    "arduino"
+  ],
+  "platforms": [
+    "espressif32"
+  ]
+}

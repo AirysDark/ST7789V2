@@ -1,0 +1,150 @@
+#######################################
+# ESP32-S3-Watch-Engine
+#######################################
+
+#######################################
+# CLASSES
+#######################################
+
+ESP32S3WatchEngine	KEYWORD1
+
+DisplayDriver	KEYWORD1
+TouchDriver	KEYWORD1
+Framebuffer	KEYWORD1
+Graphics	KEYWORD1
+Renderer	KEYWORD1
+Renderer3D	KEYWORD1
+
+Color	KEYWORD1
+
+Vertex3D	KEYWORD1
+Face3D	KEYWORD1
+Mesh3D	KEYWORD1
+Vec3	KEYWORD1
+
+#######################################
+# DISPLAY
+#######################################
+
+begin	KEYWORD2
+push	KEYWORD2
+pushRect	KEYWORD2
+pushDirty	KEYWORD2
+
+#######################################
+# FRAMEBUFFER
+#######################################
+
+enableDoubleBuffer	KEYWORD2
+enableZBuffer	KEYWORD2
+clearZBuffer	KEYWORD2
+swapBuffers	KEYWORD2
+
+getBuffer	KEYWORD2
+getBackBuffer	KEYWORD2
+
+clear	KEYWORD2
+clearBack	KEYWORD2
+
+drawPixel	KEYWORD2
+drawPixelFast	KEYWORD2
+drawPixelBack	KEYWORD2
+
+fillRect	KEYWORD2
+
+#######################################
+# GRAPHICS
+#######################################
+
+drawLine	KEYWORD2
+drawRect	KEYWORD2
+fillRect	KEYWORD2
+
+drawCircle	KEYWORD2
+fillCircle	KEYWORD2
+
+drawTriangle	KEYWORD2
+fillTriangle	KEYWORD2
+
+drawPolygon	KEYWORD2
+fillPolygon	KEYWORD2
+
+drawTexturedPolygon	KEYWORD2
+
+drawTextureRect	KEYWORD2
+drawTextureTriangle	KEYWORD2
+
+drawPanel	KEYWORD2
+drawButton	KEYWORD2
+drawSlider	KEYWORD2
+drawCheckBox	KEYWORD2
+drawProgressBar	KEYWORD2
+
+drawLED	KEYWORD2
+drawMeter	KEYWORD2
+drawCrosshair	KEYWORD2
+
+alphaBlend	KEYWORD2
+
+#######################################
+# TEXT RENDERING
+#######################################
+
+drawText	KEYWORD2
+drawTextCentered	KEYWORD2
+
+#######################################
+# 3D RENDERER
+#######################################
+
+setCamera	KEYWORD2
+
+project	KEYWORD2
+
+rotateX	KEYWORD2
+rotateY	KEYWORD2
+rotateZ	KEYWORD2
+
+drawLine3D	KEYWORD2
+
+drawGrid	KEYWORD2
+drawAxis	KEYWORD2
+
+drawCube	KEYWORD2
+drawCubeFilled	KEYWORD2
+
+drawSphere	KEYWORD2
+
+drawMesh	KEYWORD2
+drawOBJ	KEYWORD2
+
+drawPokeball	KEYWORD2
+
+#######################################
+# COLOR CONSTANTS
+#######################################
+
+BLACK	LITERAL1
+WHITE	LITERAL1
+
+RED	LITERAL1
+GREEN	LITERAL1
+BLUE	LITERAL1
+
+CYAN	LITERAL1
+MAGENTA	LITERAL1
+YELLOW	LITERAL1
+
+ORANGE	LITERAL1
+PURPLE	LITERAL1
+PINK	LITERAL1
+
+GRAY	LITERAL1
+DARKGRAY	LITERAL1
+LIGHTGRAY	LITERAL1
+
+#######################################
+# COLOR FUNCTIONS
+#######################################
+
+rgb565	KEYWORD2
