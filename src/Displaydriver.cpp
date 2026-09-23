@@ -96,12 +96,27 @@ void DisplayDriver::fillRect(
 {
     if(w <= 0 || h <= 0) return;
     if(x >= TFT_WIDTH || y >= TFT_HEIGHT) return;
+    if((x + w) <= 0 || (y + h) <= 0) return;
+
+    if(x < 0)
+    {
+        w += x;
+        x = 0;
+    }
+
+    if(y < 0)
+    {
+        h += y;
+        y = 0;
+    }
 
     if((x + w) > TFT_WIDTH)
         w = TFT_WIDTH - x;
 
     if((y + h) > TFT_HEIGHT)
         h = TFT_HEIGHT - y;
+
+    if(w <= 0 || h <= 0) return;
 
     setWindow(
         x,
